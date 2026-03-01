@@ -6,10 +6,19 @@ from .optimizer import CVOptimizer
 from .personal_experience_loader import PersonalExperienceLoader
 
 
+def _clean_auxiliary_files(tex_path: Path) -> None:
+    """Remove LaTeX auxiliary files (.aux, .log, .out) for the given .tex file."""
+    for ext in (".aux", ".log", ".out"):
+        aux_file = tex_path.with_suffix(ext)
+        if aux_file.exists():
+            aux_file.unlink()
+
+
 def compile_tex_to_pdf(tex_path: Path) -> Path:
     """Run pdflatex on the .tex file and return the path to the generated .pdf.
 
     Runs pdflatex twice so references resolve. Requires a LaTeX distribution (e.g. MiKTeX, TeX Live).
+    Removes auxiliary files (.aux, .log, .out) after a successful build so only .tex and .pdf remain.
 
     Raises:
         FileNotFoundError: If pdflatex is not installed.
@@ -18,7 +27,6 @@ def compile_tex_to_pdf(tex_path: Path) -> Path:
     if not tex_path.exists():
         raise FileNotFoundError(f"Cannot compile: {tex_path} not found")
     out_dir = tex_path.parent
-    # Run from output dir so PDF and aux files are written there; -interaction=nonstopmode to avoid prompts
     cmd = ["pdflatex", "-interaction=nonstopmode", tex_path.name]
     for _ in range(2):
         result = subprocess.run(
@@ -34,6 +42,7 @@ def compile_tex_to_pdf(tex_path: Path) -> Path:
     pdf_path = tex_path.with_suffix(".pdf")
     if not pdf_path.exists():
         raise RuntimeError(f"pdflatex did not produce {pdf_path}")
+    _clean_auxiliary_files(tex_path)
     return pdf_path
 
 

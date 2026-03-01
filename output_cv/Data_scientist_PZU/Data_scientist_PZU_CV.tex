@@ -1,5 +1,6 @@
 \documentclass[letterpaper,11pt]{article}
 
+\usepackage[T1]{fontenc}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -8,10 +9,11 @@
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{fontawesome5}
+\usepackage{fontawesome}
 \usepackage{multicol}
 \setlength{\multicolsep}{-3.0pt}
 \setlength{\columnsep}{-1pt}
@@ -19,6 +21,7 @@
 \usepackage[margin=1.4cm]{geometry}
 
 
+\setlength{\footskip}{4.08003pt}
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
@@ -99,13 +102,14 @@
     \footnotesize \raisebox{-0.1\height}
     \faPhone\ \underline{(+48) 531 260 986} ~ 
     {\faEnvelope\  \underline{kasztelanicmaciej@gmail.com}} ~ 
-    {\faLinkedin\ \underline{\href{https://www.linkedin.com/in/maciej-kasztelanic-960556247/}{linkedin.com/in/maciej-kasztelanic}}  ~
-    {\faGithub\ \underline{\href{https://github.com/kasztelmacko}{github.com/kasztelmacko}} ~
+    {\faLinkedin\ \underline{\href{https://www.linkedin.com/in/maciej-kasztelanic-960556247/}{linkedin.com/in/maciej-kasztelanic}}}  ~
+    {\faGithub\ \underline{\href{https://github.com/kasztelmacko}{github.com/kasztelmacko}}} ~
     \vspace{-8pt}
 \end{center}
 
  %-----------EDUCATION-----------
-\section{Education} \\[1mm]
+\section{Education}
+\vspace{1mm}
   \resumeSubHeadingListStart
     \resumeSubheading
       {University Of Warsaw}{Graduated in September 2025}
@@ -131,17 +135,23 @@
 \resumeSubHeadingListStart
     \resumeSubheading{Empik Group}{January 2025 -- Present}{Junior Data Scientist}{Warsaw}
     \resumeItemListStart
-        \resumeItem{Lead the end-to-end development of a store layout optimization engine using \textbf{Pyspark} and \textbf{Databricks}, projected to increase yearly sales by \textbf{7\%} through data-driven category efficiency modeling.}
-        \resumeItem{Engineered production-grade ML pipelines using \textbf{Azure Data Factory (ADF)} and \textbf{Azure Machine Learning}, reducing computation time by \textbf{20\%} and enabling large-scale optimization across diverse store groups.}
-        \resumeItem{Implemented store segmentation using \textbf{Sklearn clustering} and \textbf{XGBoost} classifiers to optimize supply chain operations and reduce store-category layout variance.}
-        \resumeItem{Collaborated with business stakeholders to translate complex furniture and capacity constraints into mathematical optimization requirements, utilizing \textbf{Plotly} for intuitive presentation of analytical results.}
+        \resumeItem{Developed and maintained \textbf{Machine Learning} models (\textbf{XGBoost}, \textbf{Sklearn}) to optimize store layouts and assortment, resulting in an estimated \textbf{7\%} increase in yearly sales.}
+        \resumeItem{Engineered end-to-end data pipelines using \textbf{PySpark}, \textbf{Databricks}, and \textbf{Azure Data Factory (ADF)} to process large-scale tabular datasets for business-critical production environments.}
+        \resumeItem{Automated model monitoring and deployment processes via \textbf{Azure Machine Learning}, reducing computation time by \textbf{20\%} and enhancing scalability across store groups.}
+        \resumeItem{Performed deep-dive \textbf{statistical analysis} and feature engineering on complex datasets to identify predictive drivers of category efficiency and consumer behavior.}
     \resumeItemListEnd
 
     \resumeSubheading{Plenti S.A}{March 2023 -- January 2024}{New Business Analyst}{Warsaw}
     \resumeItemListStart
-        \resumeItem{Developed a \textbf{Dynamic Pricing Model} utilizing \textbf{SQL} and \textbf{Google Cloud Platform (BigQuery)}, resulting in an \textbf{8\%} increase in monthly revenue through price elasticity analysis and stratified sampling.}
-        \resumeItem{Processed massive datasets to identify complementary products and optimize purchasing strategy, contributing to a \textbf{20\%} assortment growth and a \textbf{4\%} improvement in product utilization.}
-        \resumeItem{Automated competitor data collection by supervising \textbf{Scrapy} and \textbf{Selenium} scrapers on \textbf{GCP}, enhancing real-time pricing adjustments based on market actions.}
+        \resumeItem{Built the foundation for a \textbf{Dynamic Pricing Model} using \textbf{Python} and \textbf{SQL} (\textbf{BigQuery}), achieving an \textbf{8\%} revenue increase through price elasticity analysis and stratified sampling.}
+        \resumeItem{Optimized pricing policies and promotional strategies by analyzing customer behavior and market trends, directly impacting the company's bottom-line results.}
+        \resumeItem{Automated competitor data collection by supervising \textbf{Scrapy} and \textbf{Selenium} web crawlers, enabling real-time adjustments to insurance-like product offerings.}
+    \resumeItemListEnd
+
+    \resumeSubheading{InterRisk S.A (VIG)}{June 2022 -- August 2022}{Intern in Construction Insurance}{Warsaw}
+    \resumeItemListStart
+        \resumeItem{Assisted in \textbf{risk assessment} and financial condition analysis of corporate clients to support the calculation of insurance premiums and guarantee limits.}
+        \resumeItem{Analyzed balance sheets, liabilities, and claims history in \textbf{KRS} to evaluate creditworthiness and technical risk in the construction sector.}
     \resumeItemListEnd
 \resumeSubHeadingListEnd
 \vspace{-12pt}
@@ -150,30 +160,23 @@
 \vspace{-5pt}
 \resumeSubHeadingListStart
     \resumeProjectHeading
-    {\textbf{Uplift Prediction Model} $|$ \href{https://github.com/kasztelmacko/uplift_ml}{Source Code}}{Python $|$ XGBoost $|$ Sklearn $|$ Polars}
+    {\textbf{Uplift Prediction Model} $|$ \href{https://github.com/kasztelmacko/uplift_ml}{Source Code}}{Python, XGBoost, Sklearn, Polars}
     \resumeItemListStart
-        \resumeItem{Built a causal inference model to enhance marketing campaign targeting using \textbf{XGBoost} and the \textbf{sklift} package, optimizing customer conversion for term deposit products.}
+        \resumeItem{Developed a predictive model to optimize marketing campaign targeting, utilizing \textbf{XGBoost} and \textbf{sklift} to identify customers with the highest incremental response probability.}
     \resumeItemListEnd
     \vspace{-17pt}
 
     \resumeProjectHeading
-    {\textbf{Choice Experiment \& Consumer Heterogeneity} $|$ \href{https://github.com/kasztelmacko/master-model}{Source Code}}{R $|$ Python $|$ GCP $|$ FastAPI}
+    {\textbf{Choice Experiment \& Pricing Model} $|$ \href{https://github.com/kasztelmacko/master-model}{Source Code}}{R, mlogit, FastAPI, Docker}
     \resumeItemListStart
-        \resumeItem{Designed a choice-based experiment to model consumer willingness-to-pay using \textbf{Mixed Logit models} and \textbf{mlogit}, deployed as a full-stack application on \textbf{Google Cloud Run}.}
+        \resumeItem{Modeled consumer heterogeneity and \textbf{willingness-to-pay} using mixed logit models in \textbf{R}, providing data-driven insights for product feature pricing and brand familiarity impacts.}
     \resumeItemListEnd
     \vspace{-17pt}
 
     \resumeProjectHeading
-    {\textbf{Technical Specification Extraction (GenAI)} $|$ \href{https://github.com/kasztelmacko/willsee}{Source Code}}{Langchain $|$ Ollama $|$ Pydantic $|$ Docker}
+    {\textbf{Technical Spec Extraction (NLP)} $|$ \href{https://github.com/kasztelmacko/willsee}{Source Code}}{Python, LangChain, Ollama, Pydantic}
     \resumeItemListStart
-        \resumeItem{Developed an automated extraction tool for unstructured PDF data using \textbf{LLMs} and OCR, leveraging \textbf{Langchain} to transform raw technical documents into structured formats.}
-    \resumeItemListEnd
-    \vspace{-17pt}
-
-    \resumeProjectHeading
-    {\textbf{GPT-2 Reimplementation} $|$ \href{https://github.com/kasztelmacko/RR_project}{Source Code}}{R $|$ Torch $|$ Docker}
-    \resumeItemListStart
-        \resumeItem{Recreated a 124M parameter \textbf{Transformer} architecture in R, evaluating performance on Language Modeling and Reading Comprehension (CoQA) benchmarks.}
+        \resumeItem{Built an automated \textbf{text analysis} tool using LLMs and OCR to extract structured technical specifications from unstructured PDF documents, improving data extraction accuracy.}
     \resumeItemListEnd
 \resumeSubHeadingListEnd
 
