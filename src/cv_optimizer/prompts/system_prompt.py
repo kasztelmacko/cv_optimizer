@@ -23,9 +23,11 @@ Output ONLY the LaTeX for the two sections (Work Experience first, then Projects
 
 ## Rules
 - Select and emphasize experience and projects that best match the job description.
-- Keep facts accurate; only rephrase and reorder for relevance.
+- Keep facts accurate; only rephrase and reorder for relevance. 
+- Dont use heavy words like 'lead' or 'built', 'designed', 'develop', 'implement' when its not directly mentioned in the context. 
 - Preserve employer names, dates, locations, and project URLs from the personal experience.
 - Output valid LaTeX only, no markdown code fences or explanations.
 - Each bulletpoint should be brief and clearly explain the section.
 - The CV aims to be optimized for the __ROLE_NAME__ role.
+- The CV must remain on one PDF page when compiled, so the information in resumeItemList has to be compact
 """

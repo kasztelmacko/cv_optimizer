@@ -60,7 +60,7 @@
           "name": "Pricing",
           "overview": "Analysis around pricing and price elasticity as well as dynamic pricing",
           "my_part": [
-            "Developed basis for a Dynamic-Pricing-Model model, and analysed results using SQL and GCP BigQuery. Also suggested products that tested the pricing model using stratified sampling and product features",
+            "Chose products using stratified sampling and product features for a Dynamic-Pricing-Model model, and analysed results using SQL and GCP BigQuery.",
             "Conducted price and elasticity analysis among customers reducing unnecessary promotions and optimizing pricing policy"
           ],
           "project_impact": "The project increased monthly revenue from the test sample by 8%.",
@@ -150,6 +150,12 @@
         "overview": "This module helps generate synthetic orders based on assumed distributions and factors. Each order is distributed across Periods with calculated probabilties. Then those probabilities are used to generate DataFrame of orders with given products.",
         "tools": "Python, polars, numpy, matplotlib, seaborn",
         "github": "https://github.com/kasztelmacko/alttab"
+      },
+      {
+        "name": "LLM optimization tool for CV generation",
+        "overview": "This project is a tool that optimizes the CV generation process using LLM. It uses the Langchain framework to create a pipeline that generates a CV from a given job description and personal experience.",
+        "tools": "Langchain, python, Docker",
+        "github": "https://github.com/kasztelmacko/cv_optimizer"
       }
     ],
     "achievements": [
