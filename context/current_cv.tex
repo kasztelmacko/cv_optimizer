@@ -1,0 +1,193 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\usepackage[margin=1.4cm]{geometry}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.15in}
+ \addtolength{\textwidth}{0.3in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{0pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}\vspace{0pt}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Large \scshape Maciej Kasztelanic} \\[2mm]
+    \footnotesize \raisebox{-0.1\height}
+    \faPhone\ \underline{(+48) 531 260 986} ~ 
+    {\faEnvelope\  \underline{kasztelanicmaciej@gmail.com}} ~ 
+    {\faLinkedin\ \underline{\href{https://www.linkedin.com/in/maciej-kasztelanic-960556247/}{linkedin.com/in/maciej-kasztelanic}}  ~
+    {\faGithub\ \underline{\href{https://github.com/kasztelmacko}{github.com/kasztelmacko}} ~
+    \vspace{-8pt}
+\end{center}
+
+ %-----------EDUCATION-----------
+\section{Education} \\[1mm]
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University Of Warsaw}{Graduated in September 2025}
+      {Master of Data Science and Business Analytics
+      }{Warsaw}
+  \resumeSubHeadingListEnd
+    \resumeItemListStart
+        \resumeItem {Thesis: "The price of preference: Investigating brand familiarity and consumer heterogeneity in fast-food choices"}
+    \resumeItemListEnd
+    \vspace{-6pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+    {University Of Warsaw}{Graduated in July 2023}
+    {Bachelor of Finance management and accounting
+    }{Warsaw}
+  \resumeSubHeadingListEnd
+    \resumeItemListStart
+      \resumeItem {Thesis: "Dino S.A discounted cash flow (DCF) valuation"}
+    \resumeItemListEnd
+    \vspace{-12pt}
+
+%-----------Experience---------------
+\section{Work Experience}
+    \resumeSubHeadingListStart
+                \resumeSubheading{Empik Group}{January 2025 --  Present}{Junior Data Scientist}{Warsaw} 
+                \resumeItemListStart
+                    \resumeItem{Developed project utilizing \textbf{Linear Mixed Model} to optimize store layouts based on category efficiency, expected to improve yearly sales in small stores by \textbf{7\%}.}
+                    \resumeItem{Analyzed and processed data using \textbf{Pyspark}, \textbf{Plotly} and \textbf{Databricks} discovering new business cases and decision factors. Utilized the analysis to develop \textbf{Azure Data Factory (ADF)} pipelines for project productionisation.}
+                    \resumeItem{Integrated \textbf{Azure Machine Learning} into optimization process, improving the computation time by \textbf{20\%} and allowing the optimization to be performed larger store groups.}
+                    \resumeItem{Performed store segmentation utilizing \textbf{Sklearn clustering} and \textbf{XGBoost classifier} which improved supply chain operations by reducing unique store-category layouts}
+                    \resumeItemListEnd
+            \resumeSubheading{Plenti S.A}{March 2023 -- January 2024}{New Business Analyst}{Warsaw} 
+                \resumeItemListStart
+                    \resumeItem{Developed basis for a \textbf{Dynamic-Pricing-Model} model, and analysed results using \textbf{SQL} and \textbf{GCP BigQuery}. The project increased monthly revenue from the test sample by \textbf{8\%}. Additionaly conducted price and elasticity analysis among customers reducing unnecessary promotions and optimizing pricing policy.}
+                    \resumeItem{Analyzed and added products to the portfolio, contributing to a \textbf{20\%} increase in assortment. Additionally collaborated on pricing and purchasing strategy planning, improving product utilization by \textbf{4\%}.}
+                    \resumeItem{Supervised the operation of a \textbf{Scrapy} scraper collecting competitor prices, enhancing adjustments based on competitor actions.}
+                    \resumeItemListEnd
+    \resumeSubHeadingListEnd
+    \vspace{-12pt}
+
+%-----------PROJECTS-----------
+\section{Projects} 
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+    \resumeProjectHeading
+            {\textbf{{Paint-By-Numbers Kit Generator}} $|$ \href{https://github.com/kasztelmacko/willsee}{Source Code}}{Python $|$ numpy }
+            \\[5mm]
+          \resumeItemListStart
+            \resumeItem{Developed a full image processing pipeline, which allows to create Paint-By-Number kits from input image}
+          \resumeItemListEnd
+ \vspace{-20pt}
+ \resumeProjectHeading
+            {\textbf{{Uplift Predictions}} $|$ {\href{https://github.com/kasztelmacko/uplift_ml}{Source Code}}}{Polars $|$ Sklearn $|$ XGBoost}
+            \\[5mm]
+          \resumeItemListStart
+            \resumeItem{Performed full EDA and uplift modeling process to enhance targeting efficiency of the marketing campaign, utilizing \textbf{polars} and \textbf{seaborn} for analysis, and \textbf{scikitlearn}, \textbf{xgboost} and \textbf{sklift} for modeling.}
+          \resumeItemListEnd
+ \vspace{-17pt}
+ \resumeProjectHeading
+            {\textbf{{Choice Experiment Survey}} $|$ {\href{https://github.com/kasztelmacko/master-survey}{Source Code}}}{FastAPI $|$ Supabase $|$ React}
+            \\[5mm]
+        \resumeItemListStart
+            \resumeItem{Created a webapp with custom survey engine which allowed to gather choice preferences and calculate willingness-to-pay. Utilized \textbf{FastAPI} backend with \textbf{supabase}, and \textbf{React} on the frontend. The survey was deployed using \textbf{GCP run}, and choice modelling was performed with \textbf{R mlogit} package}
+        \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-20pt}
+  %-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{   
+     \textbf{Languages}{: Python, R, SQL, HTML5, CSS, JavaScript} \\[1mm]
+     \textbf{Developer Tools}{: Azure, GCP, Databricks, PowerBI, Git, Docker} \\[1mm]
+     \textbf{Libraries/Frameworks}{: Pyspark, Pandas, Pytorch, Pytest, Scikit-learn, Plotly, Numpy, Scrapy} \\ [1mm]
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+ \vspace{3pt}
+\vspace{10pt}
+
+\vspace{-15pt}
+
+
+
+\end{document}

@@ -1,0 +1,164 @@
+{
+  "education": [
+    {
+      "degree": "Master of Data Science and Business Analytics",
+      "university": "University of Warsaw",
+      "graduation_date": "September 2025",
+      "thesis_topic": "The price of preference: Investigating brand familiarity and consumer heterogeneity in fast-food choice",
+      "overview": "developed a choice base experiment survey, and modelled what product features contribute to consumer willingness to pay",
+      "tools": "FastAPI, React, python, typescript, R, mlogit, mixed logit models, Docker"
+    },
+    {
+      "degree": "Bachelor of Finance Management and Accounting",
+      "university": "University of Warsaw",
+      "graduation_date": "July 2023",
+      "thesis_topic": "Dino S.A discounted cash flow (DCF) valuation",
+      "overview": "developed a Discounted cash flow analysis of the Polish supermakret chains. Performed their financials forecasting in Excel using finance modelling",
+      "tools": "Excel"
+    }
+  ],
+  "work_experience": [
+    {
+      "employer": "Empik Group",
+      "duration": "January 2025 – Present",
+      "location": "Warsaw",
+      "role_name": "Junior Data Scientist",
+      "projects": [
+        {
+          "name": "Colombo",
+          "overview": "Optimizing store layout based on category efficiency trying to maximize store sales",
+          "my_part": [
+            "codeveloping the project throught the whole project cycle, starting from business requirement understanding to deploying to production",
+            "analysing large data sets to find right solutions for problems, or discovering hidden features in the data. The analysis was performed using Pyspark, Plotly and Databricks",
+            "analysis and deep dive into model effects to understand the predictive power of the model, and its ability to predict category efficeincies",
+            "created processing pipeline starting from raw tables up to the final business output. The processing was productionalized using Azure Data Factiry (ADF)",
+            "For the great part I was responsible for handling all the furniture and total store capacity requirements, so I had to communicate with project stakeholders",
+            "Integrated Azure Machine Learning into optimization process, improving the computation time by 20% and allowing the optimization to be performed larger store groups"
+          ],
+          "project_impact": "The project is estimated to improve yearly sales in small stores by 7%",
+          "tools_used": "python, pyspark, pandas, plotly, pytest, Azure, Azure Data Factory, Azure Machine Learning, Databricks, Docker, git"
+        },
+        {
+          "name": "Midas",
+          "overview": "Optimizing store book assortment to maximze book store sales and reduce restocking",
+          "my_part": [
+            "Performed store segmentation using sklearn clustering and XGBoost classifier which improved supply chain operations by reducing unique store-category layouts",
+            "Build pipeline to extract segmentation results into external tools used by the company"
+          ],
+          "project_impact": "The project is in the production stage for multiple years and it significantly improved stores book assortment and reduced supply chain operations",
+          "tools_used": "python, pyspark, pandas, plotly, pytest, scikit-learn, xgboost, Azure, Azure Data Factory, Azure Machine Learning, Databricks, Docker, git"
+        }
+      ]
+    },
+    {
+      "employer": "Plenti S.A",
+      "duration": "March 2023 – January 2024",
+      "location": "Warsaw",
+      "role_name": "New Business Analyst",
+      "projects": [
+        {
+          "name": "Pricing",
+          "overview": "Analysis around pricing and price elasticity as well as dynamic pricing",
+          "my_part": [
+            "Developed basis for a Dynamic-Pricing-Model model, and analysed results using SQL and GCP BigQuery. Also suggested products that tested the pricing model using stratified sampling and product features",
+            "Conducted price and elasticity analysis among customers reducing unnecessary promotions and optimizing pricing policy"
+          ],
+          "project_impact": "The project increased monthly revenue from the test sample by 8%.",
+          "tools_used": "python, scikit-learn, SQL, BigQuery, Google Cloud Platform"
+        },
+        {
+          "name": "Product offer",
+          "overview": "Managing and adding new products to the offer",
+          "my_part": [
+            "Analyzed and added products to the portfolio, contributing to a 20% increase in assortment. Additionally collaborated on pricing and purchasing strategy planning, improving product utilization by 4%.",
+            "Analyzed the offer to find new complementary products or services"
+          ],
+          "project_impact": "Contribution to 20% increase in assortment and unique products offered. Improved product utilization by 4% which was achieved by buying and selecting more efficient products.",
+          "tools_used": "SQL, BigQuery, Google Cloud Platform, Excel, PowerQuery"
+        },
+        {
+          "name": "Other",
+          "overview": "Other tasks, resolved around work automation",
+          "my_part": [
+            "Developed multiple automation tools using python and selenium which decreased the manual work on the offer.",
+            "Supervised the operation of a Scrapy scraper collecting competitor prices, enhancing adjustments based on competitor actions."
+          ],
+          "project_impact": "Manual work reduction time, and optimized data gathering process",
+          "tools_used": "python, selenium, scrapy, SQL, BigQuery, Google Cloud Platform"
+        }
+      ]
+    },
+    {
+      "employer": "InterRisk S.A",
+      "duration": "June 2022 - August 2022",
+      "location": "Warsaw",
+      "role_name": "Intern in construction insurance",
+      "projects": [
+        {
+          "name": "KYC",
+          "overview": "Understanding customer business, size of the construction, their balance sheet and history",
+          "my_part": [
+            "Analyzed financial conditions of construction companies, as well as their assets and liabilities. Additionally checked their claims in KRS",
+            "Prepared documents and offers"
+          ],
+          "project_impact": null,
+          "tools_used": null
+        }
+      ]
+    }
+  ],
+  "projects_and_achievements": {
+    "personal_projects": [
+      {
+        "name": "Technical specification extraction tool",
+        "overview": "a tool to extract technical specification metrics of solar panels from pdf. It used OCR method to extract text from PDF, and then local Ollama model with langchain and pydantic to extract only the required specifications.",
+        "tools": "Langchain, pydantic, ollama, python, Docker, uv",
+        "github": "https://github.com/kasztelmacko/willsee"
+      },
+      {
+        "name": "Paint by number kit generator",
+        "overview": "a tool to create paint by number kits from input image. It turned images into painting imitations using sklearn Kmeans clustering, then processed them using flooding algorithm, and then created numbered outlines.",
+        "tools": "Scikit-learn, OpenCV, numpy, gradio, python, uv",
+        "github": "https://github.com/kasztelmacko/willsee"
+      },
+      {
+        "name": "Uplift prediction model",
+        "overview": "The goal of this project is to enhance the targeting efficiency of the marketing campaign aimed at persuading customers to subscribe to the term deposit product. It used scikit-learn tools and models, polars and seaborn for EDA and data manipulation. The modeling used xgboost and sklift package and appropriete evaluation metrics.",
+        "tools": "Scikit-learn, XGBoost, polars, pandas, seaborn, matplotlib",
+        "github": "https://github.com/kasztelmacko/uplift_ml/tree/master"
+      },
+      {
+        "name": "Choice experiment survey",
+        "overview": "Created a webapp with custom survey engine which allowed to gather choice preferences and calculate willingness-to-pay. Utilized FastAPI backend with supabase, and React on the frontend. The survey was deployed using GCP run, and choice modelling was performed with R mlogit package",
+        "tools": "FastAPI, React, python, typescript, R, Docker, supabase",
+        "github": "https://github.com/kasztelmacko/master-survey, https://github.com/kasztelmacko/master-model"
+      },
+      {
+        "name": "GPT-2 training in R",
+        "overview": "This project aims to reimplement the GPT-2 model 124M parameters model in R and recreates the zero-shot evaluation of GPT-2 from \"Language Models are Unsupervised Multitask Learners\" (Radford et al., 2019) on three key benchmarks:\n    1. Language Modeling: Perplexity scores on Penn Treebank (PTB) and WikiText-2 to measure generative performance.\n    2. Reading Comprehension: Zero-shot F1 score on the CoQA dataset, where the model answers questions conditioned on a document and conversation history.",
+        "tools": "R, torch, Docker, numpy",
+        "github": "https://github.com/kasztelmacko/RR_project"
+      },
+      {
+        "name": "Auchan products scraper",
+        "overview": "This project implemented an automated Scrapy tool to extract  product information from Auchan website. It utilized additional scrapy middlewares to rotate headers, and used session cookies for authentications. Also it used selenium for automatic popup adds denial",
+        "tools": "python, Scrapy, Selenium",
+        "github": "https://github.com/Nauteirius/HackYeah2024"
+      },
+      {
+        "name": "Syntetic orders data generator",
+        "overview": "This module helps generate synthetic orders based on assumed distributions and factors. Each order is distributed across Periods with calculated probabilties. Then those probabilities are used to generate DataFrame of orders with given products.",
+        "tools": "Python, polars, numpy, matplotlib, seaborn",
+        "github": "https://github.com/kasztelmacko/alttab"
+      }
+    ],
+    "achievements": [
+      {
+        "name": "HackYeah 2024 Hackathon",
+        "overview": "Built a tool which extract text, sound and motion features from short public speech videos, and grade the speech. It used OpenAI Whisper for speech-to-text, DeepFace for motion features extraction and librosa for audio analysis. We did not get any prize but managed to create a working solution in 24 hours.",
+        "tools": "Python, Docker, OpenAI whisper, numpy, nltk, OpenAI API",
+        "github": "https://github.com/Nauteirius/HackYeah2024"
+      }
+    ]
+  }
+}
