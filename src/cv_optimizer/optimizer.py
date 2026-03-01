@@ -1,6 +1,7 @@
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_litellm import ChatLiteLLM
-from cv_optimizer.prompts import SYSTEM_PROMPT
+
+from cv_optimizer.prompt_loader import PromptLoader
 
 
 class CVOptimizer:
@@ -25,20 +26,12 @@ class CVOptimizer:
         role_name: str | None = None,
     ) -> str:
         """Generate optimized Experience and Projects LaTeX for the given role."""
-        role = (role_name.strip() if role_name else "target")
-        system_content = SYSTEM_PROMPT.replace("__ROLE_NAME__", role)
-        user_parts = [
-            "## Job description\n",
-            job_description,
-            "\n\n## Personal experience (use this to select and rephrase content)\n",
-            md_personal_experience,
-        ]
-        if current_sections_tex:
-            user_parts.append("\n\n## Current CV sections (for structure reference)\n")
-            user_parts.append(current_sections_tex)
-        user_parts.append("\n\nProduce the optimized Work Experience and Projects LaTeX as specified.")
-
-        user_content = "".join(user_parts)
+        system_content, user_content = PromptLoader().build_cv_optimizer_prompt(
+            role_name=role_name,
+            job_description=job_description,
+            md_personal_experience=md_personal_experience,
+            current_sections_tex=current_sections_tex,
+        )
         messages = [
             SystemMessage(content=system_content),
             HumanMessage(content=user_content),

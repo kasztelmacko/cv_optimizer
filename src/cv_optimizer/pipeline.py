@@ -1,9 +1,11 @@
 import subprocess
 from pathlib import Path
 
+from utils import get_role_name, load_json_file
+
 from .cv_template import CVTemplate
 from .optimizer import CVOptimizer
-from .personal_experience_loader import PersonalExperienceLoader
+from .prompt_loader import PromptLoader
 
 
 def _clean_auxiliary_files(tex_path: Path) -> None:
@@ -19,10 +21,6 @@ def compile_tex_to_pdf(tex_path: Path) -> Path:
 
     Runs pdflatex twice so references resolve. Requires a LaTeX distribution (e.g. MiKTeX, TeX Live).
     Removes auxiliary files (.aux, .log, .out) after a successful build so only .tex and .pdf remain.
-
-    Raises:
-        FileNotFoundError: If pdflatex is not installed.
-        RuntimeError: If pdflatex exits with an error.
     """
     if not tex_path.exists():
         raise FileNotFoundError(f"Cannot compile: {tex_path} not found")
@@ -63,12 +61,12 @@ def run(
     if template_path is None:
         template_path = personal_experience_path.parent / "current_cv.tex"
 
-    loader = PersonalExperienceLoader()
-    personal_experience = loader.load_personal_experience_file(personal_experience_path)
-    role = loader.load_role_file(role_path)
+    personal_experience = load_json_file(personal_experience_path)
+    role = load_json_file(role_path)
+    loader = PromptLoader()
     md_personal_experience = loader.format_background_for_prompt(personal_experience)
     job_description = loader.get_job_description(role)
-    role_name = loader.get_role_name(role)
+    role_name = get_role_name(role)
 
     template = CVTemplate(template_path)
     optimizer = CVOptimizer(model=model, api_key=api_key)

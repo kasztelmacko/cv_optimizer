@@ -1,6 +1,3 @@
-import json
-from pathlib import Path
-
 from .enums import (
     EducationKeys,
     PersonalExperienceKeys,
@@ -10,19 +7,11 @@ from .enums import (
     WorkExperienceKeys,
     WorkProjectKeys,
 )
+from .prompts import SYSTEM_PROMPT
 
 
-class PersonalExperienceLoader:
-    """Loads personal experience and role data from JSON files for the CV optimization prompt."""
-
-    def load_personal_experience_file(self, personal_experience_path: Path) -> dict:
-        """Load and parse the personal experience JSON file."""
-        if not personal_experience_path.exists():
-            raise FileNotFoundError(f"Personal experience file not found: {personal_experience_path}")
-        try:
-            return json.loads(personal_experience_path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as e:
-            raise ValueError(f"Invalid JSON in {personal_experience_path}: {e}") from e
+class PromptLoader:
+    """Formats personal experience and builds the full CV optimizer prompt (expects data already loaded)."""
 
     def format_background_for_prompt(self, personal_experience: dict) -> str:
         """Build a single string from education, work_experience, and projects_and_achievements for the LLM."""
@@ -85,15 +74,6 @@ class PersonalExperienceLoader:
 
         return "\n".join(parts).strip()
 
-    def load_role_file(self, role_path: Path) -> dict:
-        """Load and parse the role description JSON file."""
-        if not role_path.exists():
-            raise FileNotFoundError(f"Role file not found: {role_path}")
-        try:
-            return json.loads(role_path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as e:
-            raise ValueError(f"Invalid JSON in {role_path}: {e}") from e
-
     def get_job_description(self, role: dict) -> str:
         """Return the full job description text from the role dict.
 
@@ -111,7 +91,29 @@ class PersonalExperienceLoader:
             bits.append(f"Job description:\n{desc}")
         return "\n".join(bits).strip() if bits else ""
 
-    def get_role_name(self, role: dict) -> str | None:
-        """Return the role name from the role dict if present."""
-        name = role.get(RoleKeys.ROLE_NAME)
-        return str(name).strip() if name else None
+    def build_cv_optimizer_prompt(
+        self,
+        role_name: str | None,
+        job_description: str,
+        md_personal_experience: str,
+        current_sections_tex: str | None = None,
+    ) -> tuple[str, str]:
+        """Build system and user content for the CV optimizer LLM.
+
+        Returns (system_content, user_content) ready to be passed as SystemMessage
+        and HumanMessage.
+        """
+        role = role_name.strip() if role_name else "target"
+        system_content = SYSTEM_PROMPT.replace("__ROLE_NAME__", role)
+        user_parts = [
+            "## Job description\n",
+            job_description,
+            "\n\n## Personal experience (use this to select and rephrase content)\n",
+            md_personal_experience,
+        ]
+        if current_sections_tex:
+            user_parts.append("\n\n## Current CV sections (for structure reference)\n")
+            user_parts.append(current_sections_tex)
+        user_parts.append("\n\nProduce the optimized Work Experience and Projects LaTeX as specified.")
+        user_content = "".join(user_parts)
+        return system_content, user_content

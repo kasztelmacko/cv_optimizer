@@ -1,11 +1,11 @@
 from .cv_template import CVTemplate
 from .optimizer import CVOptimizer
-from .personal_experience_loader import PersonalExperienceLoader
+from .prompt_loader import PromptLoader
 from .pipeline import run
 
 __all__ = [
     "CVOptimizer",
     "CVTemplate",
-    "PersonalExperienceLoader",
+    "PromptLoader",
     "run",
 ]
