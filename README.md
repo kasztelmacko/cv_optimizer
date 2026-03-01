@@ -26,8 +26,8 @@ The optimized CV is written to **output_cv/** as `{role_name}_{company_name}_CV.
 
 ## Configuration (local_config.py)
 
-- **PERSONAL_EXPERIENCE_PATH** — personal experience JSON (education, work experience, projects).
-- **ROLE_PATH** — role description JSON (role_name, company_name, job_description).
+- **PERSONAL_EXPERIENCE_PATH** — path to personal experience JSON (education, work experience, projects).
+- **ROLE_NAME**, **COMPANY_NAME**, **JOB_DESCRIPTION** — target role as strings; set these and a `role_description.json` is created in the output folder (next to the generated .tex and .pdf).
 - **TEMPLATE_PATH** — current CV LaTeX template.
 - **OUTPUT_DIR** — directory for generated CVs (default: `output_cv`).
 - **MODEL** — LiteLLM model string (e.g. `gpt-4o-mini`).
@@ -35,6 +35,5 @@ The optimized CV is written to **output_cv/** as `{role_name}_{company_name}_CV.
 ## Input files
 
 - **context/personal_experience.json** — your background: `education`, `work_experience`, `projects_and_achievements`.
-- **context/role_description.json** — target role: `role_name`, `company_name`, `job_description`.
 
-Your current CV LaTeX is at `context/current_cv.tex`.
+Your current CV LaTeX is at `context/current_cv.tex`. The role is defined in local_config (ROLE_NAME, COMPANY_NAME, JOB_DESCRIPTION); a copy is saved as `role_description.json` in each run’s output folder.

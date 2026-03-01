@@ -81,7 +81,8 @@
           "overview": "Other tasks, resolved around work automation",
           "my_part": [
             "Developed multiple automation tools using python and selenium which decreased the manual work on the offer.",
-            "Supervised the operation of a Scrapy scraper collecting competitor prices, enhancing adjustments based on competitor actions."
+            "Supervised the operation of a Scrapy scraper collecting competitor prices, enhancing adjustments based on competitor actions.",
+            "Performed KYC analysis of B2C and B2B clients, understanding their financial situation and creditworthiness."
           ],
           "project_impact": "Manual work reduction time, and optimized data gathering process",
           "tools_used": "python, selenium, scrapy, SQL, BigQuery, Google Cloud Platform"

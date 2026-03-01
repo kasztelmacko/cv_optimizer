@@ -12,6 +12,12 @@ def load_json_file(path: Path) -> dict:
         raise ValueError(f"Invalid JSON in {path}: {e}") from e
 
 
+def save_json_file(path: Path, data: dict) -> None:
+    """Write a dict to a JSON file. Creates parent directories if needed."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
 def get_role_name(role: dict) -> str | None:
     """Return the role name from a role dict (e.g. from role_description.json)."""
     name = role.get("role_name")
